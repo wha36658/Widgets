@@ -1,24 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Accordion from "./components/Accordion";
+import Dropdown from "./components/Dropdown";
+import { items } from "./data/items";
 import Search from "./components/Search";
-
-const items = [
-  {
-    title: "What is React?",
-    content:
-      "React is a Javascript front-end library. It is used to show content to users and handle user events. Engineers use React to create reusable components",
-  },
-  {
-    title: "How do we show content",
-    content: "To show content you create components",
-  },
-  { title: "Why is React useful", content: "Engineers like React" },
-];
+import { options } from "./data/options";
 
 const App = () => {
+  const [selected, setSelected] = useState(options[0]);
+  const [showDropdown, setShowDropDown] = useState(true);
   return (
     <div>
-      <Search />
+      {/* <Accordion items={items} /> */}
+      {/* <Search /> */}
+      <button className="button" onClick={() => setShowDropDown(!showDropdown)}>
+        Show Dropdown
+      </button>
+      {showDropdown ? (
+        <Dropdown
+          selected={selected}
+          onSelectedChange={setSelected}
+          options={options}
+        />
+      ) : null}
     </div>
   );
 };
