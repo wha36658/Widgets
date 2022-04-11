@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Dropdown from "./Dropdown";
 import { lanOptions } from "../data/lanOptions";
+import Convert from "./Convert";
 
 //AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM
 
@@ -21,6 +22,9 @@ const Translate = () => {
           onSelectedChange={setLanguage}
           options={lanOptions}
         />
+        <hr />
+        <h3 className="ui header">Output</h3>
+        <Convert text={text} language={language} />
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
 export const lanOptions = [
   {
-    label: "Afrikaans",
-    value: "af",
+    label: "Traditional Chinese",
+    value: "zh-TW",
   },
   {
-    label: "Arabic",
-    value: "ar",
+    label: "Japanese",
+    value: "ja",
   },
   {
     label: "Hindi",
